@@ -36,15 +36,6 @@ fig = make_subplots(specs=[[{"secondary_y": True}]])
 
 # Lisää tracet
 fig.add_trace(go.Scatter(
-  x=as_tulot["Vuosi"],
-  y=as_tulot["Muutos"],
-  name="Tulot (indeksi)",
-  mode="lines",
-  line={"color": "#bccad6", "width": 10}
-  ),
-  secondary_y=True)
-
-fig.add_trace(go.Scatter(
   x=as_hinnat["Vuosi"],
   y=as_hinnat["Indeksi"],
   name="Asuntojen hinnat (indeksi)",
@@ -53,12 +44,22 @@ fig.add_trace(go.Scatter(
   ),
   secondary_y=True)
 
+fig.add_trace(go.Scatter(
+  x=as_tulot["Vuosi"],
+  y=as_tulot["Muutos"],
+  name="Tulot (indeksi)",
+  mode="lines+markers",
+  line={"color": "#667292", "width": 10},
+  marker={"size": 20}
+  ),
+  secondary_y=True)
+
 fig.add_trace(go.Bar(
   x=as_velat_asuntokunta["Vuosi"],
   y=as_velat_asuntokunta["Velkaa/velallinen"],
   name="Asuntovelkaa/velallinen (euroa)",
-  width=0.3,
-  marker={"color": "#667292"}
+  width=0.5,
+  marker={"color": "#bccad6"}
   ),
   secondary_y=False)
 
@@ -71,12 +72,15 @@ fig.update_layout(
   title={"text":"Asuntokuntien tulot kääntyivät laskuun", "x": 0.478, "font": {"size": 25}},
   xaxis_title="Vuosi",
   legend={"x": 0.585, "y": 0.03, "font": {"size":15}},
-  yaxis={"tickformat": ",.0f"}
+  yaxis={"tickformat": ",.0f"},
+  legend_traceorder="reversed"
   )
 
 # Päivitä y-akseleiden layoutia
 fig.update_yaxes(title_text="Indeksi", secondary_y=True)
 fig.update_yaxes(title_text="Euroa", secondary_y=False)
+fig.update_yaxes(range = [81000, 107000], secondary_y=False)
+fig.update_yaxes(showgrid=False, secondary_y=True)
 
 # Lisää lähde
 fig.add_annotation({
