@@ -56,7 +56,7 @@ fig.add_trace(go.Scatter(
 fig.add_trace(go.Bar(
   x=as_velat_asuntokunta["Vuosi"],
   y=as_velat_asuntokunta["Velkaa/velallinen"],
-  name="Asuntovelkaa/velalinen (euroa)",
+  name="Asuntovelkaa/velallinen (euroa)",
   width=0.3,
   marker={"color": "#667292"}
   ),
