@@ -1,4 +1,4 @@
-# Alma Talent: Ennakkotehtävä
+# Ennakkotehtävä
 
 Tiedostot:
 
