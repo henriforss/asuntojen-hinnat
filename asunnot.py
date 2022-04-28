@@ -68,7 +68,7 @@ fig.update_layout(
   width=1000,
   height=650,
   plot_bgcolor="#f1e3dd",
-  title={"text":"Asuntojen hinnat, asuntokuntien tulot ja asuntovelan määrä", "x": 0.478, "font": {"size": 25}},
+  title={"text":"Asuntokuntien tulot kääntyi laskuun", "x": 0.478, "font": {"size": 25}},
   xaxis_title="Vuosi",
   legend={"x": 0.585, "y": 0.03, "font": {"size":15}},
   yaxis={"tickformat": ",.0f"}
