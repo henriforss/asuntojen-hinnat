@@ -78,5 +78,16 @@ fig.update_layout(
 fig.update_yaxes(title_text="Indeksi", secondary_y=True)
 fig.update_yaxes(title_text="Euroa", secondary_y=False)
 
+# Lisää lähde
+fig.add_annotation({
+  "text": "Lähde: Tilastokeskus.",
+  "x": 0.945,
+  "y": -0.12,
+  "showarrow": False,
+  "xref": "paper",
+  "yref": "paper",
+  "font": {"size": 11}
+  })
+
 # Piirrä kuvaaja
 fig.show()
